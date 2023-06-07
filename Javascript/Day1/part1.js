@@ -1,5 +1,12 @@
-const fs = require("fs");
+const { read } = require("./read");
 
-const content = fs.readFileSync("Javascript\\Day1\\inputfile.txt");
+const sumsSorted = read
+  .map((elf) => {
+    return elf
+      .split("\n")
+      .map((item) => parseInt(item, 10))
+      .reduce((sum, v) => sum + v, 0);
+  })
+  .sort((a, z) => z - a);
 
-console.log(content.toString());
+console.log(sumsSorted[0]);
