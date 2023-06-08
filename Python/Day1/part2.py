@@ -16,4 +16,4 @@ with open(file1, "r") as in_file:
             current_calories += int(calories)
 
 calorie_list.sort(reverse=True)
-print(calorie_list[0:3])
+print(sum(calorie_list[0:3]))
