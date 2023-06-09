@@ -9,4 +9,5 @@ let total = 0;
 read.forEach((game) => {
   total += decideWinner(game);
 });
+//15572 is the correct answer.
 console.log(total);
