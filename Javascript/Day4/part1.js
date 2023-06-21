@@ -8,20 +8,14 @@ const fullyContainsTheOther = () => {
   let sum = 0;
   read.forEach((elfSet) => {
     let elvesRange = elfSet.split(",");
-    let elf1Range = elvesRange[0].split("-");
-    let elf2Range = elvesRange[1].split("-");
+    let elf1Range = elvesRange[0].split("-").map(Number);
+    let elf2Range = elvesRange[1].split("-").map(Number);
     // console.log("elf1Range: ", elf1Range);
     // console.log("elf2Range: ", elf2Range);
     //check if the other one fully contains
-    if (
-      parseInt(elf1Range[0]) <= parseInt(elf2Range[0]) &&
-      parseInt(elf1Range[1]) >= parseInt(elf2Range[1])
-    ) {
+    if (elf1Range[0] <= elf2Range[0] && elf1Range[1] >= elf2Range[1]) {
       sum++;
-    } else if (
-      parseInt(elf1Range[0]) >= parseInt(elf2Range[0]) &&
-      parseInt(elf1Range[1]) <= parseInt(elf2Range[1])
-    ) {
+    } else if (elf1Range[0] >= elf2Range[0] && elf1Range[1] <= elf2Range[1]) {
       sum++;
     }
   });
